@@ -29,5 +29,9 @@ sleep 5
 # Check status
 ./nexus status || true
 
+#Initial password
+sudo cat /home/ubuntu/sonatype-work/nexus3/admin.password
+
+echo " This is initial password of Nexus"
 echo " ✅ Nexus started successfully!"
 echo "Access it in your browser: http://$(hostname -I | awk '{print $1}'):8081"
