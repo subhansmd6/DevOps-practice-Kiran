@@ -7,7 +7,6 @@ set -e
 # Step 1: Update system packages
 echo "Updating system packages"
 sudo apt update -y
-sudo apt upgrade -y
 
 # Step 2: Install Java (Jenkins requires Java 17+)
 echo "Installing Java"
@@ -32,12 +31,7 @@ echo "Enabling and starting Jenkins..."
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
 
-# Step 5: Allow Jenkins port (8080) through firewall
-echo "Configuring firewall"
-sudo ufw allow 8080
-sudo ufw reload
-
-# Step 6: Display initial admin password
+# Step 5: Display initial admin password
 echo "Initial Admin Password:"
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 echo "Login using the above password to complete setup."
